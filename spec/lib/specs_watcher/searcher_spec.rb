@@ -15,6 +15,7 @@ describe SpecsWatcher::Searcher do
           expect(first[:size]).not_to be_empty
           expect(first[:case_price]).to be_a Float
           expect(first[:case_size]).not_to be_empty
+          expect(first[:upc]).not_to be_empty
           expect(first).not_to have_key(:description)
           expect(first).not_to have_key(:image)
         end
