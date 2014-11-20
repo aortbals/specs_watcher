@@ -41,8 +41,8 @@ module SpecsWatcher
     end
 
     def search(options)
-      response = make_request(search_path, params(options))
-      results = Parser.parse(response.body)
+      response = make_request(path, params(options))
+      results = Parsers::Searcher.parse(response.body)
       unless options[:verbose]
         results.each { |r| r.delete :description }
         results.each { |r| r.delete :image }
@@ -52,7 +52,7 @@ module SpecsWatcher
 
     private
 
-    def search_path
+    def path
       "/search"
     end
 

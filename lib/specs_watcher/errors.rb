@@ -1,3 +1,5 @@
 module SpecsWatcher
-  InvalidCategoryError = Class.new(StandardError)
+  SpecsWatcherError = Class.new(StandardError)
+  InvalidCategoryError = Class.new(SpecsWatcherError)
+  InvalidArgumentsError = Class.new(SpecsWatcherError)
 end
