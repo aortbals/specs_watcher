@@ -5,8 +5,10 @@ module SpecsWatcher
 
     desc "search --category CATEGORY", "Search through Spec's Liquor Inventory"
     option :category, aliases: :c, default: :bourbon
+    option :include_description
     def search
-      puts Searcher.search(options)
+      results = Searcher.search(options)
+      print_table(SpecsWatcher::Formatter.array_hash_to_table(results))
     rescue SpecsWatcher::InvalidCategoryError => e
       say(e, :red)
     end

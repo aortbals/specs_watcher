@@ -40,7 +40,9 @@ module SpecsWatcher
 
     def search(options)
       response = make_request(search_path, params(options))
-      Parser.parse(response.body)
+      results = Parser.parse(response.body)
+      results.each { |r| r.delete :description } unless options[:include_description]
+      results
     end
 
     private
