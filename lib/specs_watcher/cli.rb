@@ -5,7 +5,7 @@ module SpecsWatcher
 
     desc "search --category CATEGORY", "Search through Spec's Liquor Inventory"
     option :category, aliases: :c, default: :bourbon
-    option :include_description
+    option :verbose
     def search
       results = Searcher.search(options)
       print_table(SpecsWatcher::Formatter.array_hash_to_table(results))

@@ -41,7 +41,10 @@ module SpecsWatcher
     def search(options)
       response = make_request(search_path, params(options))
       results = Parser.parse(response.body)
-      results.each { |r| r.delete :description } unless options[:include_description]
+      unless options[:verbose]
+        results.each { |r| r.delete :description }
+        results.each { |r| r.delete :image }
+      end
       results
     end
 
