@@ -3,7 +3,13 @@ require 'thor'
 module SpecsWatcher
   class CLI < Thor
 
-    desc "search --category CATEGORY", "Search through Spec's Liquor Inventory"
+    desc "search --category=CATEGORY", "Search through Spec's Liquor Inventory"
+    long_desc <<-EOS
+
+      Categories:
+        armagnac, blended_whiskey, bourbon, boutique_bourbon, brandy, canadian_whiskey, cocktails, cognac, cream_liqueurs, decanters, eau_de_vie, flavored_vodka, gift_liquor, gin, grappa, imported_vodka, irish_whisky, liqueur, miniatures_50ml, other_whiskeys, rum, scotch_blends, scotch_malts, tequila, tequila_super_premium, us_vodka, whiskey_flavored
+
+    EOS
     option :category, aliases: :c, default: :bourbon
     option :verbose
     def search
@@ -13,7 +19,7 @@ module SpecsWatcher
       say(e, :red)
     end
 
-    desc "availability --upc UPC --zip ZIP", "Check availability for an item by UPC and zip code"
+    desc "availability", "Check availability for an item by UPC and zip code"
     option :upc, required: true
     option :zip, required: true
     def availability
