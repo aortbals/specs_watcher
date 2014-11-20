@@ -58,7 +58,7 @@ module SpecsWatcher
         pageid: 'search',
         inclass: 'Liquors',
         webclass: 'Liquors',
-        subclass: self.class.sub_categories[:bourbon],
+        subclass: category(override[:category]),
         showmax: 1000,
         noask: 'noask',
         submit: 'Click to Show More',
@@ -70,6 +70,16 @@ module SpecsWatcher
         pricethru: nil,
         "Sortby" => 'Name'
       }
+    end
+
+    def category(key)
+      if key
+        value = self.class.sub_categories[key.to_sym]
+        raise SpecsWatcher::InvalidCategoryError, "'#{key}' is not a valid category" unless value
+        value
+      else
+        self.class.sub_categories[:bourbon]
+      end
     end
 
     def make_request(path, params = {})

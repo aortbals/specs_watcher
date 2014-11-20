@@ -2,8 +2,13 @@ require 'thor'
 
 module SpecsWatcher
   class CLI < Thor
-    def hello(name)
-      puts "Hello #{name}"
+
+    desc "search --category CATEGORY", "Search through Spec's Liquor Inventory"
+    option :category
+    def search
+      puts Searcher.search(options)
+    rescue SpecsWatcher::InvalidCategoryError => e
+      say(e, :red)
     end
   end
 end
