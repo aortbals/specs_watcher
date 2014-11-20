@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require 'specs_watcher'
+
+SpecsWatcher::CLI.start(ARGV)
