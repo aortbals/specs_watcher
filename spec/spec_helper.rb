@@ -16,10 +16,12 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require 'specs_watcher'
+require 'vcr'
 
 VCR.configure do |c|
-  c.cassette_library_dir = 'fixtures/vcr_cassettes'
+  c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   c.hook_into :webmock
+  c.allow_http_connections_when_no_cassette = true
 end
 
 RSpec.configure do |config|

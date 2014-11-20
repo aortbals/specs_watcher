@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = SpecsWatcher::VERSION
   spec.authors       = ["Aaron Ortbals"]
   spec.email         = ["aaron.ortbals@gmail.com"]
-  spec.summary       = %q{Search Spec's online inventory}
+  spec.summary       = %q{A useful CLI for searching Spec's online inventory}
   spec.description   = %q{A useful CLI for searching Spec's online inventory}
   spec.homepage      = ""
   spec.license       = "MIT"
@@ -18,10 +18,13 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "typhoeus"
+  spec.add_dependency "typhoeus", "~> 0.6.9"
+  spec.add_dependency "nokogiri", "~> 1.6.2"
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.1.0"
   spec.add_development_dependency "vcr", "~> 2.9.3"
+  spec.add_development_dependency 'webmock'
+  spec.add_development_dependency 'pry'
 end

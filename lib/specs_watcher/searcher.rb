@@ -39,7 +39,8 @@ module SpecsWatcher
     end
 
     def search(options)
-      make_request(search_path, params(options))
+      response = make_request(search_path, params(options))
+      Parser.parse(response.body)
     end
 
     private
@@ -72,7 +73,23 @@ module SpecsWatcher
     end
 
     def make_request(path, params = {})
-      Typhoeus::Request.new(base_uri + path, method: :get, params: options)
+      Typhoeus.get(base_uri + path,
+        method: :get,
+        params: params,
+        headers: headers,
+        accept_encoding: 'gzip')
+    end
+
+    def headers
+      {
+        'DNT' => '1',
+        'Accept-Language' => 'en-US,en;q=0.8',
+        'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36',
+        'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Referer' => 'http://www.specsonline.com/cgi-bin/search?keyword=&inclass=Liquors&webclass=Liquors&subclass=130&origin=&region=&size=&Sortby=Name&pricefrom=&pricethru=&',
+        'Cookie' => 'specsonline=11416499040204.128.208.187; _gat=1; _ga=GA1.2.1539204617.1416498811',
+        'Connection' => 'keep-alive'
+      }
     end
   end
 end
