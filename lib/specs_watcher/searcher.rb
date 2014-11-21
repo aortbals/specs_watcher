@@ -1,5 +1,14 @@
 require_relative 'requests'
 
+# Keyword search for 'yamazaki' without a sub-category
+# curl 'http://www.specsonline.com/cgi-bin/search?keyword=yamazaki&inclass=Liquors&webclass=Liquors&subclass=&origin=&region=&size=&Sortby=Name&pricefrom=&pricethru=&' -H 'Pragma: no-cache' -H 'DNT: 1' -H 'Accept-Encoding: gzip,deflate,sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://www.specsonline.com/cgi-bin/showpage?pageid=search&keyword=yamazaki&inclass=Liquors&webclass=Liquors&subclass=&origin=&region=&size=&Sortby=Name&pricefrom=&pricethru=&' -H 'Cookie: zip=77008; specsonline=11416270248204.128.208.187; _gat=1; _ga=GA1.2.1582335722.1416270044' -H 'Connection: keep-alive' -H 'Cache-Control: no-cache' --compressed
+
+# 'bourbon' sub-category without keyword, all results
+# curl 'http://www.specsonline.com/cgi-bin/search?pageid=search&keyword=&inclass=Liquors&webclass=Liquors&subclass=120&origin=&region=&size=&Sortby=Name&pricefrom=&pricethru=&showmax=1000&noask=noask&submit=Click+to+Show+More' -H 'Pragma: no-cache' -H 'DNT: 1' -H 'Accept-Encoding: gzip,deflate,sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://www.specsonline.com/cgi-bin/search?keyword=&inclass=Liquors&webclass=Liquors&subclass=120&origin=&region=&size=&Sortby=Name&pricefrom=&pricethru=&' -H 'Cookie: zip=77008; specsonline=11416270248204.128.208.187; _gat=1; _ga=GA1.2.1582335722.1416270044' -H 'Connection: keep-alive' -H 'Cache-Control: no-cache' --compressed
+
+# default search, max results of 1000
+# curl 'http://www.specsonline.com/cgi-bin/search?pageid=search&keyword=&inclass=Liquors&webclass=Liquors&subclass=&origin=&region=&size=&Sortby=Name&pricefrom=&pricethru=&showmax=1000&noask=noask&submit=Click+to+Show+More' -H 'Pragma: no-cache' -H 'DNT: 1' -H 'Accept-Encoding: gzip,deflate,sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Referer: http://www.specsonline.com/cgi-bin/search?keyword=&inclass=Liquors&webclass=Liquors&subclass=&origin=&region=&size=&Sortby=Name&pricefrom=&pricethru=&' -H 'Cookie: zip=77008; specsonline=11416270248204.128.208.187; _gat=1; _ga=GA1.2.1582335722.1416270044' -H 'Connection: keep-alive' -H 'Cache-Control: no-cache' --compressed
+
 module SpecsWatcher
   class Searcher
     include SpecsWatcher::Requests
@@ -65,7 +74,7 @@ module SpecsWatcher
         showmax: 1000,
         noask: 'noask',
         submit: 'Click to Show More',
-        keyword: nil,
+        keyword: override[:keyword],
         origin: nil,
         size: nil,
         region: nil,
@@ -80,8 +89,6 @@ module SpecsWatcher
         value = self.class.sub_categories[key.to_sym]
         raise SpecsWatcher::InvalidCategoryError, "'#{key}' is not a valid category" unless value
         value
-      else
-        self.class.sub_categories[:bourbon]
       end
     end
   end
