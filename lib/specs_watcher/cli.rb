@@ -12,20 +12,23 @@ module SpecsWatcher
     EOS
     option :category, aliases: :c
     option :verbose
-    def search(keyword)
+    def search(keyword=nil)
       searcher_options = options.dup
       searcher_options.merge!({keyword: keyword}) if keyword
       results = Searcher.search(searcher_options)
-      print_table(SpecsWatcher::Formatter.array_hash_to_table(results))
+
+      if results.any?
+        print_table(SpecsWatcher::Formatter.array_hash_to_table(results))
+      else
+        puts "No Results."
+      end
     rescue SpecsWatcher::InvalidCategoryError => e
       say(e, :red)
     end
 
-    desc "availability", "Check availability for an item by UPC and zip code"
-    option :upc, required: true
-    option :zip, required: true
-    def availability
-      results = Availability.search(options)
+    desc "availability ZIP UPC", "Check availability for an item by zip code and UPC"
+    def availability(zip, upc)
+      results = Availability.search({ zip: zip, upc: upc })
       puts results[:title]
       print_table(SpecsWatcher::Formatter.array_hash_to_table(results[:locations]))
     rescue SpecsWatcher::SpecsWatcherError => e
