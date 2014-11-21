@@ -96,4 +96,19 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
+
+  # Capture stdout
+  # https://github.com/erikhuda/thor/blob/3241f2fbf1172b6182723b073fd4b390200660e9/spec/helper.rb#L51
+  def capture(stream)
+    begin
+      stream = stream.to_s
+      eval "$#{stream} = StringIO.new"
+      yield
+      result = eval("$#{stream}").string
+    ensure
+      eval("$#{stream} = #{stream.upcase}")
+    end
+
+    result
+  end
 end

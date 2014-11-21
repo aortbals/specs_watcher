@@ -1,0 +1,151 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.specsonline.com/cgi-bin/search?Sortby=Name&inclass=Liquors&keyword=foobar&noask=noask&origin=&pageid=search&pricefrom=&pricethru=&region=&showmax=1000&size=&subclass=&submit=Click%20to%20Show%20More&webclass=Liquors
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/38.0.2125.122 Safari/537.36
+      Dnt:
+      - '1'
+      Accept-Language:
+      - en-US,en;q=0.8
+      Accept:
+      - text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+      Referer:
+      - http://www.specsonline.com/cgi-bin/search?keyword=&inclass=Liquors&webclass=Liquors&subclass=130&origin=&region=&size=&Sortby=Name&pricefrom=&pricethru=&
+      Cookie:
+      - specsonline=11416499040204.128.208.187; _gat=1; _ga=GA1.2.1539204617.1416498811
+      Connection:
+      - keep-alive
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Nov 2014 23:10:13 GMT
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=5
+      Vary:
+      - Accept-Encoding
+      Server:
+      - ''
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 3.0//EN\" \"html.dtd\">\n<HTML>\n<HEAD>\n<TITLE>cart
+        </TITLE>\n<script language=\"JavaScript\">\nvar cartwin;\n\nfunction ordwin(
+        form ) \n{\n\tvar url = form;\n\n\tsmwin = window.open(url,'orderhist','width=600,height=640,alwaysRaised=yes,directories=no,location=no,menubar=no,status=no,scrollbars=yes,toolbar=no,resizable=no,left=350,top=150,screenX=350,screenY=150');\n\tsmwin.focus();\n\treturn
+        false;\n}\n\nfunction smallwin( form ) \n{\n\tvar url = '/cgi-bin/pleasewait?Form='+form\n\n\tsmwin
+        = window.open(url,'SpecsOnline','width=500,height=440,alwaysRaised=yes,directories=no,location=no,menubar=no,status=no,scrollbars=yes,toolbar=no,resizable=no,left=150,top=150,screenX=150,screenY=150');\n\tsmwin.focus();\n\treturn
+        false;\n}\n\nfunction rladdcart( upc ) \n{\n\tvar url = \"/cgi-bin/rlshowcart?upc=\"+upc\n\tvar
+        doreg = ''\n/*\n\tdoreg = loadreg();\n\tif ( doreg == 'register' )\n           url
+        = '/cgi-bin/cartreg?upc='+upc;\t\n*/\n\tcartwin = window.open(url,\"ShoppingCart\",'width=600,height=480,alwaysRaised=yes,directories=no,location=no,menubar=no,status=no,scrollbars=yes,toolbar=no,resizable=no,left=150,top=150,screenX=150,screenY=150');\n\tcartwin.focus();\n\treturn
+        false;\n}\nfunction addcart( upc ) \n{\n\tvar url = \"/cgi-bin/showcart?upc=\"+upc\n\tvar
+        doreg = ''\n/*\n\tdoreg = loadreg();\n\tif ( doreg == 'register' )\n           url
+        = '/cgi-bin/cartreg?upc='+upc;\t\n*/\n\tcartwin = window.open(url,'ShoppingCart','width=600,height=480,alwaysRaised=yes,directories=no,location=no,menubar=no,status=no,scrollbars=yes,toolbar=no,resizable=no,left=150,top=150,screenX=150,screenY=150');\n\tcartwin.focus();\n\treturn
+        false;\n}\n\nfunction showsyn ( upc ) \n{\n\tvar url = '/cgi-bin/pleasewait?Form=showsyn&upc='+upc\n\tsynwin
+        = window.open(url,'Synopsis','width=500,height=200,directories=no,location=no,menubar=no,status=no,scrollbars=yes,toolbar=no,resizable=no,left=150,top=150,screenX=150,screenY=150');\n\tsynwin.focus();\n\treturn
+        false;\n}\n\nfunction showpic ( upc ) \n{\n\tvar url = '/cgi-bin/pleasewait?Form=showpic&upc='+upc\n\tpicwin
+        = window.open(url,'Picture','title=no,width=200,height=200,directories=no,location=no,menubar=no,status=no,scrollbars=no,toolbar=no,resizable=yes,left=250,top=250,screenX=250,screenY=250');\n\tpicwin.focus();\n\treturn
+        false;\n}\n\nfunction showpic2( upc )\n{\n\tvar x, y;\n\tvar divname = 'PicDiv';\n\tvar
+        imgsrc1 = '/prodpics/'+upc+'.jpg';\n\tvar imgsrc2 = '/images/close.jpg';\n/*\n\tx
+        = 200;\n\ty = 0;\n\tdocument.getElementById(divname).style.left = x;\n\tdocument.getElementById(divname).style.top
+        = y;\n*/\n\tdocument.getElementById(divname).innerHTML = \"<img id=PicImage
+        src=\\\"\" + imgsrc1 + \"\\\" onclick=hidepic() >\" + \"<img id=PicClose src=\\\"\"
+        + imgsrc2 + \"\\\" onclick=hidepic() >\";\n\tdocument.getElementById(divname).style.display=
+        \"block\";\n\treturn false;\n}\n\nfunction hidekey()\n{\n\tvar divname = 'KeyDiv';\n\tdocument.getElementById(divname).innerHTML
+        = \"\";\n\tdocument.getElementById(divname).style.display = \"none\";\n\treturn
+        false;\n}\n\nfunction hidepic()\n{\n\tvar divname = 'PicDiv';\n\tdocument.getElementById(divname).innerHTML
+        = \"\";\n\tdocument.getElementById(divname).style.display = \"none\";\n\treturn
+        false;\n}\n\nfunction showkey ( upc ) \n{\n\tvar url = '/cgi-bin/pleasewait?Form=showkey&upc='+upc\n\tskeywin
+        = window.open(url,'KeyInfo','width=500,height=200,directories=no,location=no,menubar=no,status=no,scrollbars=yes,toolbar=no,resizable=no,left=150,top=250,screenX=150,screenY=250');\n\tskeywin.focus();\n\treturn
+        false;\n}\n\nfunction showkey2( upc )\n{\nvar url = '/cgi-bin/pleasewait?Form=showkey&upc='+upc\n\tvar
+        x, y;\n\tvar divname = 'KeyDiv';\n\tvar imgsrc1 = '/prodpics/'+upc+'.jpg';\n\tvar
+        imgsrc2 = '/images/close.jpg';\n\tx = 125;\n\ty = 100;\n\tdocument.getElementById(divname).style.left
+        = x;\n\tdocument.getElementById(divname).style.top = y;\n\tdocument.getElementById(divname).innerHTML
+        = \"<iframe width=500 height=200 id=KeyURL src=\\\"\"+url+\"\\\" onclick=hidekey()
+        >\";\n\tdocument.getElementById(divname).style.display= \"block\";\n\treturn
+        false;\n}\n\t\nfunction showavail ( upc ) \n{\n\tvar url = '/cgi-bin/pleasewait?Form=showavail&upc='+upc\n\tskeywin
+        = window.open(url,'KeyInfo','width=540,height=500,directories=no,location=no,menubar=no,status=no,scrollbars=yes,toolbar=no,resizable=no,left=250,top=150,screenX=250,screenY=150');\n\tskeywin.focus();\n\treturn
+        false;\n}\n\nfunction showavail2 ( upc ) \n{\n\tvar url = '/cgi-bin/showavail&upc='+upc\n\tvar
+        x, y;\n\tvar divname = 'KeyDiv';\n\tx = 125;\n\ty = 100;\n\tdocument.getElementById(divname).style.left
+        = x;\n\tdocument.getElementById(divname).style.top = y;\n\tdocument.getElementById(divname).innerHTML
+        = \"<iframe width=500 height=400 id=AvlURL src=\\\"\"+url+\"\\\" onmouseleave=hidekey()
+        >\";\n\tdocument.getElementById(divname).style.display= \"block\";\n\treturn
+        false;\n}\n\n</script>\n</HEAD>\n<BODY BGCOLOR=\"f0f0f0\" FBACKGROUND=\"/gifs/graybunny.gif\">\n<BODY
+        BGCOLOR=\"ffffff\" >\n\n <script>\n <!--\n // Copyright (c) 1996-1997 Tomer
+        Shiran. All rights reserved.\n // Permission given to use the script provided
+        that this notice remains as is.\n // Additional scripts can be found at http://www.geocities.com/~yehuda/\n\n
+        // Boolean variable specified if alert should be displayed if cookie exceeds
+        4KB\n var caution = false\n\n // name - name of the cookie\n // value - value
+        of the cookie\n // [expires] - expiration date of the cookie (defaults to
+        end of current session)\n // [path] - path for which the cookie is valid (defaults
+        to path of calling document)\n // [domain] - domain for which the cookie is
+        valid (defaults to domain of calling document)\n // [secure] - Boolean value
+        indicating if the cookie transmission requires a secure transmission\n //
+        * an argument defaults when it is assigned null as a placeholder\n // * a
+        null placeholder is not required for trailing omitted arguments\n // *  expires.toGMTString()\n
+        function setCookie(name, value, expires, path, domain, secure) {\n var curCookie
+        = name + \"=\" + escape(value) +\n// *; expires=Saturday, 31-Dec-50 23:59:59
+        GMT; path=/\"\n ((expires) ? \"; expires=\" + expires.toGMTString() : \"\")
+        +\n ((path) ? \"; path=\" + path : \"/\") +\n ((domain) ? \"; domain=\" +
+        domain : \"\") +\n ((secure) ? \"; secure\" : \"0\")\n //*if (!caution ||
+        (name + \"=\" + escape(value)).length <= 4000)\n document.cookie = curCookie\n
+        //*else\n //*if (confirm(\"Cookie exceeds 4KB and will be cut!\"))\n //*document.cookie
+        = curCookie\n }\n\n // \"; expires=Thu, 02 Aug 2008 19:56:50 GMT\" +\n //
+        name - name of the desired cookie\n // * return string containing value of
+        specified cookie or null if cookie does not exist\n function getCookie(name)
+        {\n var prefix = name + \"=\"\n var cookieStartIndex = document.cookie.indexOf(prefix)\n
+        if (cookieStartIndex == -1)\n return null\n var cookieEndIndex = document.cookie.indexOf(\";\",
+        cookieStartIndex + prefix.length)\n if (cookieEndIndex == -1)\n cookieEndIndex
+        = document.cookie.length\n return unescape(document.cookie.substring(cookieStartIndex
+        + prefix.length, cookieEndIndex))\n }\n\n // name - name of the cookie\n //
+        [path] - path of the cookie (must be same as path used to create cookie)\n
+        // [domain] - domain of the cookie (must be same as domain used to create
+        cookie)\n // * path and domain default if assigned null or omitted if no explicit
+        argument proceeds\n function deleteCookie(name, path, domain) {\n if (getCookie(name))
+        {\n document.cookie = name + \"=\" + \n ((path) ? \"; path=\" + path : \"/\")
+        +\n ((domain) ? \"; domain=\" + domain : \"\") +\n \"; expires=Thu, 01-Jan-70
+        00:00:01 GMT\"\n }\n }\n\n // date - any instance of the Date object\n //
+        * you should hand all instances of the Date object to this function for \"repairs\"\n
+        // * this function is taken from Chapter 14, \"Time and Date in JavaScript\",
+        in \"Learn Advanced JavaScript Programming\"\n function fixDate(date) {\n
+        var base = new Date(0)\n var skew = base.getTime()\n if (skew > 0)\n date.setTime(date.getTime()
+        - skew)\n }\n \n var now = new Date()\n fixDate(now)\n now.setTime(now.getTime()
+        + 31 * 24 * 60 * 60 * 1000)\n var name = getCookie(\"specsonline\")\n if (!name){\n
+        \    name = '1'+now.getTime()\n     //* document.write( '<META HTTP-EQUIV=\"Set-Cookie\"
+        CONTENT=\"specsonline='+nane+' ; expires=Saturday, 31-Dec-50 23:59:59 GMT;
+        path=/\">' )\n     //*setCookie(\"specsonline\", name, now)\n}\n //document.write(\"id:
+        \" + name )\n //-->\n </script>\n<div id=PicDiv>\n</div>\n<div id=KeyDiv>\n</div>\n<font
+        FACE=\"Arial, helvetica\" SIZE=\"+0\" COLOR=\"#000000\" >\n</ul>\n<FORM action=/cgi-bin/search
+        >\n<b><center>      0 items in current selection.  </center></b>\n</FORM>\n<hr>\nReceive
+        an Additional 5% Discount for Cash Payment. Prices and Vintages subject to
+        change.\n<BR><font color=f00000>All Availability and Pricing is at the Smith
+        street location.  Availability and prices may vary by location.</font>\n</CENTER>\n<p>\n<B>\n<STYLE
+        TYPE=\"text/css\">\n{font-family: Arial;}\ninput {font-family: Arial;font-size:
+        9;}\nselect {font-family: Arial;font-size: 9;}\ntd {font-family: Arial; font-size:
+        11;}\n.resize {\nwidth: 120px;\nheight : auto;\n}\n\n.resize {\nwidth: auto;\nheight
+        : 100px;\n}\n#KeyDiv {\ndisplay: none;\nposition: fixed;\nborder:4px solid
+        grey;\nbackground-color: grey;\nz-index:1;\n}\n#KeyURL {\nborder:10 solid
+        white;\nposition: relative;\nfloat: left;\n}\n#PicDiv {\ndisplay: none;\nposition:
+        fixed;\ntop:50px;\nleft:150px;\nMax-Height:400px;\nz-index:2;\n}\n#PicImage
+        {\nborder:24px solid white;\nposition: relative;\nMax-Height:400px;\nfloat:
+        left;\n}\n#PicClose {\nposition: relative;\nfloat: left;\nopacity: .5;\nleft:
+        -75px;\ntop: 5px;\nz-index:2;\n}\n</STYLE>\n<TABLE WIDTH=98% CELLPADDING=0
+        CELLSPACING=0><TR>\n</TABLE>\n</B>\n</ul>\n"
+    http_version: 
+  recorded_at: Fri, 21 Nov 2014 23:10:13 GMT
+recorded_with: VCR 2.9.3
