@@ -1,6 +1,6 @@
 # SpecsWatcher
 
-TODO: Write a gem description
+A useful CLI for searching Spec's online inventory.
 
 ## Installation
 
@@ -14,18 +14,16 @@ gem build specs_watcher.gemspec && gem install specs_watcher
 
 ### Commands
 
-Commands:
+Search through Spec's inventory.
+
+```
+specs_watcher search [KEYWORD] [(--category | -c) CATEGORY] [(--verbose | -v)]
+```
 
 Check availability for an item by zip code and UPC
 
 ```
 specs_watcher availability ZIP UPC
-```
-
-Search through Spec's Liquor Inventory
-
-```
-specs_watcher search [KEYWORD] [(--category | -c) CATEGORY] [(--verbose | -v)]
 ```
 
 Describe available commands or one specific command
