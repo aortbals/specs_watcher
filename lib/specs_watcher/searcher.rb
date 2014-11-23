@@ -43,7 +43,7 @@ module SpecsWatcher
     def search(options)
       response = make_request(path, params(options))
       results = Parsers::Searcher.parse(response.body)
-      unless options[:verbose]
+      unless options[:verbose] || options[:format] == 'json'
         results.each { |r| r.delete :description }
         results.each { |r| r.delete :image }
       end

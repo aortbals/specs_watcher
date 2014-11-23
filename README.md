@@ -55,3 +55,11 @@ Use the power of unix to construct more complex queries:
 ```
 specs_watcher search -c boutique_bourbon | egrep -i '(noahs mill|basil haydens)'
 ```
+
+Print the output as json:
+
+```
+specs_watcher search balvenie -f json
+```
+
+Note: `--format json` always includes the additional columns provided by the `--verbose` flag.

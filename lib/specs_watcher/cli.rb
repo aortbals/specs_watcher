@@ -6,11 +6,13 @@ module SpecsWatcher
     map 's' => 'search'
     map 'a' => 'availability'
 
-    desc "search [KEYWORD] [(--category | -c)=CATEGORY] [(--verbose | -v)]", "Search through Spec's Inventory"
+    desc "search [KEYWORD] [(--category | -c)=CATEGORY] [(--verbose | -v)] [(--format | -f) FORMAT]", "Search through Spec's Inventory"
     long_desc <<-EOS
       Search through or list Spec's Inventory
 
     Alias: s
+
+    Format: 'table' (default), 'json'
 
     Categories:
 
@@ -18,6 +20,7 @@ module SpecsWatcher
 
     EOS
     option :category, aliases: '-c'
+    option :format, aliases: '-f', default: 'table'
     option :verbose, aliases: '-v'
     def search(keyword=nil)
       searcher_options = options.dup
@@ -25,7 +28,11 @@ module SpecsWatcher
       results = Searcher.search(searcher_options)
 
       if results.any?
-        print_table(SpecsWatcher::Formatter.array_hash_to_table(results))
+        if options[:format] == 'json'
+          puts results.to_json
+        else
+          print_table(SpecsWatcher::Formatter.array_hash_to_table(results))
+        end
       else
         puts "No Results."
       end

@@ -20,6 +20,35 @@ describe SpecsWatcher::CLI do
       end
     end
 
+    context "option :format" do
+      context 'default format' do
+        it 'returns a table' do
+          VCR.use_cassette('cli_search_keyword_balvenie') do
+            content = capture(:stdout) { SpecsWatcher::CLI.start(%w[search balvenie]) }
+            expect(content.lines[1]).to eql("BALVENIE  MALT * 12YR SINGLE BARREL 6/CS  [SCOTLAND]   72.41  750ML      386.65  Case [6]   008366487306\n")
+          end
+        end
+      end
+
+      context ':json format' do
+        it 'prints valid json' do
+          VCR.use_cassette('cli_search_keyword_balvenie') do
+            content = capture(:stdout) { SpecsWatcher::CLI.start(%w[search balvenie --format json]) }
+            expect(JSON.parse(content).first).to eql({
+              "title" => "BALVENIE  MALT * 12YR SINGLE BARREL 6/CS  [SCOTLAND]",
+              "price" => 72.41,
+              "size" => "750ML",
+              "case_price" => 386.65,
+              "case_size" => "Case [6]",
+              "description" => "",
+              "image" => "http://www.specsonline.com/prodpics/008366487306.jpg",
+              "upc" => "008366487306"
+            })
+          end
+        end
+      end
+    end
+
     describe 'keyword' do
       context 'a bogus keyword' do
         it 'returns no results' do
