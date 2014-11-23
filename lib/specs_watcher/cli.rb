@@ -6,9 +6,9 @@ module SpecsWatcher
     map 's' => 'search'
     map 'a' => 'availability'
 
-    desc "search [KEYWORD] [(--category | -c)=CATEGORY] [(--verbose | -v)]", "Search through Spec's Liquor Inventory"
+    desc "search [KEYWORD] [(--category | -c)=CATEGORY] [(--verbose | -v)]", "Search through Spec's Inventory"
     long_desc <<-EOS
-      Search through or list Spec's Liquor Inventory
+      Search through or list Spec's Inventory
 
     Alias: s
 

@@ -1,6 +1,6 @@
 # SpecsWatcher
 
-A useful CLI for searching Spec's online inventory.
+Trying to find that rare bourbon? Want to check the availability of your favorite scotch? `specs_watcher` has your back. Quickly search through Spec’s online inventory and check availability.
 
 ## Installation
 
@@ -10,9 +10,7 @@ cd specs_watcher
 gem build specs_watcher.gemspec && gem install specs_watcher
 ```
 
-## Usage
-
-### Commands
+## Commands
 
 Search through Spec's inventory.
 
@@ -32,16 +30,28 @@ Describe available commands or one specific command
 specs_watcher help [COMMAND]
 ```
 
-#### Search
+## Examples
 
-Search by keyword
+Search by keyword:
 
 ```
 specs_watcher search balvenie
 ```
 
-List a category
+List a category:
 
 ```
-specs_watcher -c bourbon
+specs_watcher search -c bourbon
+```
+
+Show the available categories:
+
+```
+specs_watcher help search
+```
+
+Use the power of unix to construct more complex queries:
+
+```
+specs_watcher search -c boutique_bourbon | egrep -i '(noahs mill|basil haydens)'
 ```
