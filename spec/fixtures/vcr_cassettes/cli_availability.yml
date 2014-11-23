@@ -18,8 +18,6 @@ http_interactions:
       - text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
       Referer:
       - http://www.specsonline.com/cgi-bin/search?keyword=&inclass=Liquors&webclass=Liquors&subclass=130&origin=&region=&size=&Sortby=Name&pricefrom=&pricethru=&
-      Cookie:
-      - specsonline=11416499040204.128.208.187; _gat=1; _ga=GA1.2.1539204617.1416498811
       Connection:
       - keep-alive
   response:
@@ -28,7 +26,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 21 Nov 2014 23:41:37 GMT
+      - Sun, 23 Nov 2014 18:25:55 GMT
       Content-Type:
       - text/html
       Transfer-Encoding:
@@ -99,10 +97,10 @@ http_interactions:
         Rector</TD><TD>Limited Availabilty</TD><TD align=right>67.6 miles</TD><TD><A
         HREF=/cgi-bin/showmap?store=197&mode=mini>[Map]</A></TD></TR>\n<TR><TD>41-Cinco
         Ranch</TD><TD>Limited Availabilty</TD><TD align=right>110.6 miles</TD><TD><A
-        HREF=/cgi-bin/showmap?store=41&mode=mini>[Map]</A></TD></TR>\n<TR><TD>00-Downtown</TD><TD>Available</TD><TD
-        align=right>130.2 miles</TD><TD><A HREF=/cgi-bin/showmap?store=00&mode=mini>[Map]</A></TD></TR>\n<TR><TD>01-Kingwood</TD><TD>Limited
+        HREF=/cgi-bin/showmap?store=41&mode=mini>[Map]</A></TD></TR>\n<TR><TD>00-Downtown</TD><TD>Limited
+        Availabilty</TD><TD align=right>130.2 miles</TD><TD><A HREF=/cgi-bin/showmap?store=00&mode=mini>[Map]</A></TD></TR>\n<TR><TD>01-Kingwood</TD><TD>Limited
         Availabilty</TD><TD align=right>133.3 miles</TD><TD><A HREF=/cgi-bin/showmap?store=01&mode=mini>[Map]</A></TD></TR>\n<TR><TD>06-Bay
         Area Blvd</TD><TD>Call Store</TD><TD align=right>147.5 miles</TD><TD><A HREF=/cgi-bin/showmap?store=06&mode=mini>[Map]</A></TD></TR>\n</TABLE>\n</CENTER>\n</HTML>\n"
     http_version: 
-  recorded_at: Fri, 21 Nov 2014 23:41:41 GMT
+  recorded_at: Sun, 23 Nov 2014 18:26:00 GMT
 recorded_with: VCR 2.9.3

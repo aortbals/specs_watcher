@@ -18,8 +18,6 @@ http_interactions:
       - text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
       Referer:
       - http://www.specsonline.com/cgi-bin/search?keyword=&inclass=Liquors&webclass=Liquors&subclass=130&origin=&region=&size=&Sortby=Name&pricefrom=&pricethru=&
-      Cookie:
-      - specsonline=11416499040204.128.208.187; _gat=1; _ga=GA1.2.1539204617.1416498811
       Connection:
       - keep-alive
   response:
@@ -28,7 +26,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 21 Nov 2014 23:30:46 GMT
+      - Sun, 23 Nov 2014 18:26:01 GMT
       Content-Type:
       - text/html
       Transfer-Encoding:
@@ -45,9 +43,11 @@ http_interactions:
       - gzip
     body:
       encoding: UTF-8
-      string: "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 3.0//EN\" \"html.dtd\">\n<HTML>\n<HEAD>\n<TITLE>cart
-        </TITLE>\n<script language=\"JavaScript\">\nvar cartwin;\n\nfunction ordwin(
-        form ) \n{\n\tvar url = form;\n\n\tsmwin = window.open(url,'orderhist','width=600,height=640,alwaysRaised=yes,directories=no,location=no,menubar=no,status=no,scrollbars=yes,toolbar=no,resizable=no,left=350,top=150,screenX=350,screenY=150');\n\tsmwin.focus();\n\treturn
+      string: "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 3.0//EN\" \"html.dtd\">\n<HTML>\n<HEAD>\n<META
+        HTTP-EQUIV=\"Set-Cookie\" CONTENT=\"specsonline=11416767378204.128.208.187;
+        expires=Saturday, 31-Dec-50 23:59:59 GMT; path=/\">\n<TITLE>cart </TITLE>\n<script
+        language=\"JavaScript\">\nvar cartwin;\n\nfunction ordwin( form ) \n{\n\tvar
+        url = form;\n\n\tsmwin = window.open(url,'orderhist','width=600,height=640,alwaysRaised=yes,directories=no,location=no,menubar=no,status=no,scrollbars=yes,toolbar=no,resizable=no,left=350,top=150,screenX=350,screenY=150');\n\tsmwin.focus();\n\treturn
         false;\n}\n\nfunction smallwin( form ) \n{\n\tvar url = '/cgi-bin/pleasewait?Form='+form\n\n\tsmwin
         = window.open(url,'SpecsOnline','width=500,height=440,alwaysRaised=yes,directories=no,location=no,menubar=no,status=no,scrollbars=yes,toolbar=no,resizable=no,left=150,top=150,screenX=150,screenY=150');\n\tsmwin.focus();\n\treturn
         false;\n}\n\nfunction rladdcart( upc ) \n{\n\tvar url = \"/cgi-bin/rlshowcart?upc=\"+upc\n\tvar
@@ -153,11 +153,11 @@ http_interactions:
         ></FONT></CENTER></TD><TD WIDTH=50 ALIGN=LEFT> 750ML</TD><TD WIDTH=60 ALIGN=LEFT>Each<br>Case
         [6]</TD><TD WIDTH=40 ALIGN=RIGHT>  72.41<br> 386.65</TD></TD><TD ALIGN=RIGHT
         WIDTH=40 VALIGN=TOP><IMG SRC=/gifs/blank.gif></TD><TD WIDTH=80><A NAME=1 HREF=#
-        onclick=\"return false\"><IMG SRC=/gifs/limited.png BORDER=0></A><br><br><br><A
-        NAME=1 HREF=# onclick=\"showavail('008366487306');return false\"><IMG SRC=/gifs/checkavail.png
-        BORDER=0></A></TD></TR>\n<TR><TD COLSPAN=8><HR></TD></TR>\n<TR VALIGN=TOP><TD><div
-        style=max-width:120px;overflow:hidden;><IMG class=resize SRC=/prodpics/008366411221.jpg
-        BORDER=0 onmouseout=hidepic() onmousemove=showpic2('008366411221')></div></TD><TD
+        onclick=\"addcart('008366487306');return false;\"><IMG SRC=/gifs/ctext.png
+        BORDER=0></A><br><br><br><A NAME=1 HREF=# onclick=\"showavail('008366487306');return
+        false\"><IMG SRC=/gifs/checkavail.png BORDER=0></A></TD></TR>\n<TR><TD COLSPAN=8><HR></TD></TR>\n<TR
+        VALIGN=TOP><TD><div style=max-width:120px;overflow:hidden;><IMG class=resize
+        SRC=/prodpics/008366411221.jpg BORDER=0 onmouseout=hidepic() onmousemove=showpic2('008366411221')></div></TD><TD
         WIDTH=50%>BALVENIE MALT * 12YR DOUBLEWOOD  [SCOTLAND]<br><br><CENTER><FONT
         style='font-family:Trebuchet MS;font-size:10;color:b0b0b0;font-weight:bold;'
         >AMBER COLOUR. NOSE SHERRY AND ORANGE SKINS. MEDIUM RICH BODY. PALATE BEAUTIFULLY
@@ -183,11 +183,11 @@ http_interactions:
         ></FONT></CENTER></TD><TD WIDTH=50 ALIGN=LEFT> 750ML</TD><TD WIDTH=60 ALIGN=LEFT>Each<br>Case
         [6]</TD><TD WIDTH=40 ALIGN=RIGHT>  96.83<br> 517.07</TD></TD><TD ALIGN=RIGHT
         WIDTH=40 VALIGN=TOP><IMG SRC=/gifs/blank.gif></TD><TD WIDTH=80><A NAME=4 HREF=#
-        onclick=\"addcart('008366487319');return false;\"><IMG SRC=/gifs/ctext.png
-        BORDER=0></A><br><br><br><A NAME=4 HREF=# onclick=\"showavail('008366487319');return
-        false\"><IMG SRC=/gifs/checkavail.png BORDER=0></A></TD></TR>\n<TR><TD COLSPAN=8><HR></TD></TR>\n<TR
-        VALIGN=TOP><TD><div style=max-width:120px;overflow:hidden;><IMG class=resize
-        SRC=/prodpics/008366411223.jpg BORDER=0 onmouseout=hidepic() onmousemove=showpic2('008366411223')></div></TD><TD
+        onclick=\"return false\"><IMG SRC=/gifs/limited.png BORDER=0></A><br><br><br><A
+        NAME=4 HREF=# onclick=\"showavail('008366487319');return false\"><IMG SRC=/gifs/checkavail.png
+        BORDER=0></A></TD></TR>\n<TR><TD COLSPAN=8><HR></TD></TR>\n<TR VALIGN=TOP><TD><div
+        style=max-width:120px;overflow:hidden;><IMG class=resize SRC=/prodpics/008366411223.jpg
+        BORDER=0 onmouseout=hidepic() onmousemove=showpic2('008366411223')></div></TD><TD
         WIDTH=50%>BALVENIE MALT * 15YR SINGLE BARREL   [SCOTLAND]<br><br><CENTER><FONT
         style='font-family:Trebuchet MS;font-size:10;color:b0b0b0;font-weight:bold;'
         >PALE GOLD COLOUR. NOSE; ASSERTIVE DRY OAK CEDAR HEATHER-HONEY. FIRM BODIED.
@@ -247,5 +247,5 @@ http_interactions:
         onclick=\"showavail('008366411224');return false\"><IMG SRC=/gifs/checkavail.png
         BORDER=0></A></TD></TR>\n</TABLE>\n</B>\n</ul>\n"
     http_version: 
-  recorded_at: Fri, 21 Nov 2014 23:30:46 GMT
+  recorded_at: Sun, 23 Nov 2014 18:26:01 GMT
 recorded_with: VCR 2.9.3

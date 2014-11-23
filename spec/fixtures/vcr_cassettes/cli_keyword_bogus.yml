@@ -18,8 +18,6 @@ http_interactions:
       - text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
       Referer:
       - http://www.specsonline.com/cgi-bin/search?keyword=&inclass=Liquors&webclass=Liquors&subclass=130&origin=&region=&size=&Sortby=Name&pricefrom=&pricethru=&
-      Cookie:
-      - specsonline=11416499040204.128.208.187; _gat=1; _ga=GA1.2.1539204617.1416498811
       Connection:
       - keep-alive
   response:
@@ -28,7 +26,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 21 Nov 2014 23:10:13 GMT
+      - Sun, 23 Nov 2014 18:26:01 GMT
       Content-Type:
       - text/html
       Transfer-Encoding:
@@ -45,9 +43,11 @@ http_interactions:
       - gzip
     body:
       encoding: UTF-8
-      string: "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 3.0//EN\" \"html.dtd\">\n<HTML>\n<HEAD>\n<TITLE>cart
-        </TITLE>\n<script language=\"JavaScript\">\nvar cartwin;\n\nfunction ordwin(
-        form ) \n{\n\tvar url = form;\n\n\tsmwin = window.open(url,'orderhist','width=600,height=640,alwaysRaised=yes,directories=no,location=no,menubar=no,status=no,scrollbars=yes,toolbar=no,resizable=no,left=350,top=150,screenX=350,screenY=150');\n\tsmwin.focus();\n\treturn
+      string: "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 3.0//EN\" \"html.dtd\">\n<HTML>\n<HEAD>\n<META
+        HTTP-EQUIV=\"Set-Cookie\" CONTENT=\"specsonline=11416767379204.128.208.187;
+        expires=Saturday, 31-Dec-50 23:59:59 GMT; path=/\">\n<TITLE>cart </TITLE>\n<script
+        language=\"JavaScript\">\nvar cartwin;\n\nfunction ordwin( form ) \n{\n\tvar
+        url = form;\n\n\tsmwin = window.open(url,'orderhist','width=600,height=640,alwaysRaised=yes,directories=no,location=no,menubar=no,status=no,scrollbars=yes,toolbar=no,resizable=no,left=350,top=150,screenX=350,screenY=150');\n\tsmwin.focus();\n\treturn
         false;\n}\n\nfunction smallwin( form ) \n{\n\tvar url = '/cgi-bin/pleasewait?Form='+form\n\n\tsmwin
         = window.open(url,'SpecsOnline','width=500,height=440,alwaysRaised=yes,directories=no,location=no,menubar=no,status=no,scrollbars=yes,toolbar=no,resizable=no,left=150,top=150,screenX=150,screenY=150');\n\tsmwin.focus();\n\treturn
         false;\n}\n\nfunction rladdcart( upc ) \n{\n\tvar url = \"/cgi-bin/rlshowcart?upc=\"+upc\n\tvar
@@ -147,5 +147,5 @@ http_interactions:
         -75px;\ntop: 5px;\nz-index:2;\n}\n</STYLE>\n<TABLE WIDTH=98% CELLPADDING=0
         CELLSPACING=0><TR>\n</TABLE>\n</B>\n</ul>\n"
     http_version: 
-  recorded_at: Fri, 21 Nov 2014 23:10:13 GMT
+  recorded_at: Sun, 23 Nov 2014 18:26:01 GMT
 recorded_with: VCR 2.9.3
