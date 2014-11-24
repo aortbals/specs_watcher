@@ -5,9 +5,7 @@ Trying to find that rare bourbon? Want to check the availability of your favorit
 ## Installation
 
 ```shell
-git clone git@vault.aaronortbals.com:aortbals/specs_watcher.git
-cd specs_watcher
-gem build specs_watcher.gemspec && gem install specs_watcher
+gem install specs_watcher --source "https://dl.dropboxusercontent.com/content_link/Q3iGDPOYaO72WtOHdZ0cRo3tGVDCRHcedYNTxMv8XEgzEVFdFplUjRR3AmHIUcgw?dl=1"
 ```
 
 ## Commands
