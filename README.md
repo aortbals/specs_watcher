@@ -13,7 +13,7 @@ gem install specs_watcher --source "https://dl.dropboxusercontent.com/content_li
 Search through Spec's inventory.
 
 ```
-specs_watcher search [KEYWORD] [(--category | -c) CATEGORY] [(--verbose | -v)]
+specs_watcher search [KEYWORD] [(--category | -c)=CATEGORY] [(--verbose | -v)] [(--format | -f) FORMAT]
 ```
 
 Check availability for an item by zip code and UPC
