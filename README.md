@@ -1,6 +1,6 @@
 # SpecsWatcher
 
-Quickly search through Spec’s online inventory and check availability.
+Quickly search through Spec’s online inventory and check availability. This project is just for fun, and is not meant to be relied on in any sort of *serious* capacity.
 
 ## Installation
 
