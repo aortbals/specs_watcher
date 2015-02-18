@@ -1,11 +1,11 @@
 # SpecsWatcher
 
-Trying to find that rare bourbon? Want to check the availability of your favorite scotch? `specs_watcher` has your back. Quickly search through Spec’s online inventory and check availability.
+Quickly search through Spec’s online inventory and check availability.
 
 ## Installation
 
 ```shell
-gem install specs_watcher --source "https://dl.dropboxusercontent.com/content_link/Q3iGDPOYaO72WtOHdZ0cRo3tGVDCRHcedYNTxMv8XEgzEVFdFplUjRR3AmHIUcgw?dl=1"
+gem install specs_watcher
 ```
 
 ## Commands
@@ -19,7 +19,7 @@ specs_watcher search [KEYWORD] [(--category | -c)=CATEGORY] [(--verbose | -v)] [
 Check availability for an item by zip code and UPC
 
 ```
-specs_watcher availability ZIP UPC
+specs_watcher availability [ZIP] [UPC]
 ```
 
 Describe available commands or one specific command
